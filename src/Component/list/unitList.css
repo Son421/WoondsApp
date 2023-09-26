@@ -12,3 +12,14 @@
 .unit__show--button:hover{
     background-color: rgb(41, 41, 41);
 }
+
+.utit__list--wrapper{
+    background-color: rgb(24, 24, 24);
+    color: aliceblue;
+    width: 300px;
+    margin: 4px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+}

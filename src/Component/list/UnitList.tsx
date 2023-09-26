@@ -14,6 +14,14 @@ export default function UnitList(props: {unit: unitType}){
     function showUp(){
         setShowList(!showList);
     }
+
+    function increment(){
+
+    }
+
+    function decrement(){
+
+    }
     
     if(!showList){
         return(
@@ -28,9 +36,18 @@ export default function UnitList(props: {unit: unitType}){
             <div>
                 <div>
                     <div onClick={showUp} className='unit__show--button'> {props.unit.name} <TiArrowSortedUp/> </div>
-                    {props.unit.unitNames.map((nameUnit) => (
-                        <div> {nameUnit} </div>
-                    ))}
+                    <div className='utit__list--wrapper'>
+                        <div>
+                            {props.unit.unitNames.map((nameUnit) => (
+                                <div> {nameUnit} </div>
+                            ))}
+                        </div>
+                        <div>
+                            {props.unit.unitWoonds.map((woondUnit) => (
+                                <div> {woondUnit} </div> 
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         );

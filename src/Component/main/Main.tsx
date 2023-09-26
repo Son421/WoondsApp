@@ -1,14 +1,30 @@
 import React, {useState} from "react";
-import UnitList from "../list/UtitList";
+import HistorytList from "../list/HistorytList";
+import {navigation} from "../../features/navigationSlice";
+import {useAppSelector} from "../../hooks";
+import UnitList from "../list/UnitList";
 import ultramarines from "../../UnitDate/ultramarines";
 
 export default function Main(){
+    const value = useAppSelector(navigation);
 
-    return(
-        <div>
+    if(value == 'history'){
+        return(
             <div>
-                <UnitList unit={ultramarines} />
+                <HistorytList/>
             </div>
-        </div>
-    )
+        )
+    }else if(value == 'list'){
+        return(
+            <div>
+               <UnitList unit={ultramarines}/>
+            </div>
+        )
+    }else{
+        return(
+            <div>
+                
+            </div>
+        )
+    }
 }

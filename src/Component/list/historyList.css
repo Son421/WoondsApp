@@ -1,0 +1,48 @@
+.history--wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.history{
+    margin: 12px;
+    padding: 4px;
+    font-size: 26px;
+    color: aliceblue;
+    font-family: 'Inclusive Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    background-color: #1E1E25;
+    height: 50px;
+}
+
+.fraction--button{
+    color: aliceblue;
+    font-family: 'Inclusive Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333241;
+    width: 85%;
+    margin: 12px;
+    padding: 4px;
+    font-size: 24px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.new__list--button{
+    position: fixed;
+    top: 85%;
+    left: 74%;
+    border-radius: 5px;
+    background-color: #1E1E25;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    padding: 14px;
+    cursor: pointer;
+}
