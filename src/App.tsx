@@ -1,12 +1,15 @@
 import React from 'react';
-import Main from './Component/main/Main';
-import Head from './Component/head/Head';
+import { BrowserRouter as Router, Route, BrowserRouter} from 'react-router-dom';
+import Head from './Components/chapters/head/Head';
+import Routes from './Components/navigation/routes';
 
 function App() {
   return (
     <div>
-      <Head/>
-      <Main/>
+      <BrowserRouter>
+        <Head/>
+        <Routes/>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,10 +1,14 @@
 .header__line{
     background-color: black;
-    color:aliceblue;
     height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 40px;
+}
+
+.home--button{
+    color:aliceblue;
+    text-decoration: none;
     cursor: pointer;
 }

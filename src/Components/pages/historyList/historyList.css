@@ -46,3 +46,9 @@
     padding: 14px;
     cursor: pointer;
 }
+
+.button{
+    color:aliceblue;
+    text-decoration: none;
+    cursor: pointer;
+}

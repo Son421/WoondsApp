@@ -1,3 +1,5 @@
+import { profile } from "console";
+
 const ultramarinesDate = {
 	"catalogue": {
 		"categoryEntries": [{
@@ -3930,27 +3932,43 @@ const ultramarinesDate = {
 
 const name = 'ultramarines character';
 
-let unitNames: (string | undefined)[];
+let unitNames: (string[])[];
 
-let unitWoonds: (string | undefined | number)[];
+let unitWoonds: (number[])[];
 
 unitNames = ultramarinesDate.catalogue.sharedSelectionEntries.map((item) => {
-        if(Object.keys(item).length === 13){
-		if(item.name)
-            return item.name
-        }
-    });
+	let typeNameArr
+	let nameArr: string[] = []
+	if(Object.keys(item).length === 13){
+		typeNameArr = item.profiles.filter(elem => elem.typeName === 'Unit');
+		typeNameArr.forEach((elem) => {
+			nameArr.push(elem.name)
+		})
+	return nameArr
+	}else{
+		let nameArr: string[] = []
+		return nameArr
+	}
+}).filter(item => item.length > 0);
 
-	unitWoonds = ultramarinesDate.catalogue.sharedSelectionEntries.map((item) => {
+unitWoonds = ultramarinesDate.catalogue.sharedSelectionEntries.map((item) => {
+	let woondArr: (number)[] = []
     if(Object.keys(item).length === 13){
-		let woondsArr;
-		for(let i = 0; i < item.profiles.length; i++){
-			if(item.profiles[i].characteristics[3]){
-				woondsArr = item.profiles[i].characteristics[3].$text;
-				return woondsArr;
+		item.profiles.forEach((elem) => {
+			let woondNameArr = elem.characteristics.filter(element => element.name === "W")
+			if(woondNameArr.length > 0){
+				woondNameArr.forEach((elem) => {
+					if (typeof(elem.$text) === 'number'){
+						woondArr.push(elem.$text)
+					}
+				})	
 			}
-		}
-    }
-});
+		})
+		return woondArr
+    }else{
+		let woondArr: (number)[] = []
+		return woondArr
+	}
+}).filter(item => item.length > 0);
 
 export default {unitNames, unitWoonds, name};

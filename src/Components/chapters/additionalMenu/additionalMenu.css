@@ -1,0 +1,10 @@
+.menu--wrapper{
+    background-color: rgb(24, 24, 24);
+    color: aliceblue;
+    min-width: 250px;
+    width: 90%;
+    padding: 12px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+}

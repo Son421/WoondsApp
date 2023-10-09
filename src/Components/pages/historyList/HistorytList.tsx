@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import './historyList.css'
-import {TiArrowSortedDown, TiPlus} from "react-icons/ti";
-import ultramarines from "../../UnitDate/ultramarines";
+import {TiPlus} from "react-icons/ti";
+import ultramarines from "../../../UnitDate/ultramarines";
+import { NavLink } from "react-router-dom";
 
 export default function HistorytList(){
 
@@ -10,15 +11,12 @@ export default function HistorytList(){
             <div className="history--wrapper">
                 <div className="history">
                     <span> History </span> 
-                    <div> <TiArrowSortedDown/> </div> 
                 </div>
             </div>
             <div>
-                <div className="fraction--button"> {ultramarines.name} </div>
+                <NavLink to="/fraction" className={'button'}> <div className="fraction--button"> {ultramarines.name} </div> </NavLink>
                 <div>
-                    <div className="new__list--button"> 
-                        <TiPlus/>
-                    </div>
+                    <NavLink to="/form" className={'button'}> <div className="new__list--button"> <TiPlus/> </div> </NavLink>
                 </div>
             </div>
         </div>
